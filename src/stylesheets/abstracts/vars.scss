@@ -1,0 +1,23 @@
+// Font Weights & Examples
+$font-weight-light: 400;
+$font-weight-regular: 500;
+$font-weight-bold: 600;
+
+//Colours
+$color-font: #000000;
+$color-highlight: #936CA4;
+
+// 600px
+$breakpoint-small: "only screen and (max-width: 37.5em)";
+// 750px
+$breakpoint-small-medium: "only screen and (max-width: 46.875em)";
+// 900px
+$breakpoint-medium-small: "only screen and (max-width: 56.25em)";
+// 1000px
+$breakpoint-medium: "only screen and (max-width: 62.5em)";
+// 1200px
+$breakpoint-medium-large: "only screen and (max-width: 75em)";
+// 1300px
+$breakpoint-large: "only screen and (max-width: 81.250em)";
+// 1400px
+$breakpoint-extra-large: "only screen and (max-width: 87.5em)";
