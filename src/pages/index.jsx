@@ -1,21 +1,33 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query {
+        desktop: file(relativePath: { eq: "umbrella.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 2560) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const imgData = data.desktop.childImageSharp.fluid;
+      return (
+        <Layout>
+          <BackgroundImage Tag="section" fluid={imgData} backgroundColor={`#040e18`}>
+            <h1>Test</h1>
+          </BackgroundImage>
+        </Layout>
+      );
+    }}
+  />
 );
 
 export default IndexPage;
