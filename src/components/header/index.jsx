@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
     <nav className="header__nav">
       <ul>
         <li>
-          <Link to="/">Link 1</Link>
+          <Link to="homepage-2">Homepage 2</Link>
         </li>
         <li>
           <Link to="/">Link 2</Link>

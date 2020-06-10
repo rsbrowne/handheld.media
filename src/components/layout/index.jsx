@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from '../header';
+import HeaderBurger from '../header-burger';
 import Footer from '../footer';
 import './styles.scss';
 
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <HeaderBurger siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
         <Footer />
