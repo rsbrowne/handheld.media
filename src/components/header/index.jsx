@@ -5,12 +5,26 @@ import React from 'react';
 import './styles.scss';
 
 const Header = ({ siteTitle }) => (
-  <header>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </div>
+  <header className="header">
+    <Link className="logo" to="/">
+      HHM
+    </Link>
+    <nav className="header__nav">
+      <ul>
+        <li>
+          <Link to="/">Link 1</Link>
+        </li>
+        <li>
+          <Link to="/">Link 2</Link>
+        </li>
+        <li>
+          <Link to="/">Link 3</Link>
+        </li>
+        <li>
+          <Link to="/">Link 4</Link>
+        </li>
+      </ul>
+    </nav>
   </header>
 );
 

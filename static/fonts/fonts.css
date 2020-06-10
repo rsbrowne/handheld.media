@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Vitruvian Man";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  /* Read next point */
+  unicode-range: U+000-5FF;
+  /* Download only latin glyphs */
+  src: local("Vitruvian Man Regular"),
+    url("./vitruvianman/vitruvianman.ttf") format("ttf"),
+    url("./vitruvianman/vitruvianman.woff") format("woff"),
+    url("/vitruvianman/vitruvianman.woff2") format("woff2");
+}

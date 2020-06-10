@@ -8,6 +8,18 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Montserrat', 'Roboto'],
+        },
+        custom: {
+          families: ['Vitruvian Man'],
+          urls: ['/fonts/fonts.css'],
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

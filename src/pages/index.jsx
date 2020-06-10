@@ -21,9 +21,20 @@ const IndexPage = () => (
       const imgData = data.desktop.childImageSharp.fluid;
       return (
         <Layout>
-          <BackgroundImage Tag="section" fluid={imgData} backgroundColor={`#040e18`}>
-            <h1>Test</h1>
-          </BackgroundImage>
+          <div className="homepage">
+            <BackgroundImage
+              className="homepage__bg"
+              Tag="section"
+              fluid={imgData}
+              backgroundColor={`#040e18`}>
+              <div className="homepage__overlay" />
+              <h1 className="homepage__intro">
+                BIG INTRO
+                <br />
+                TEXT
+              </h1>
+            </BackgroundImage>
+          </div>
         </Layout>
       );
     }}
