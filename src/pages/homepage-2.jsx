@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 import Layout from '../components/layout';
 
-const Homepage2 = () => (
+const Homepage2 = ({ location }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -20,7 +20,7 @@ const Homepage2 = () => (
     render={data => {
       const imgData = data.desktop.childImageSharp.fluid;
       return (
-        <Layout>
+        <Layout location={location}>
           <div className="homepage">
             <BackgroundImage
               className="homepage__bg"

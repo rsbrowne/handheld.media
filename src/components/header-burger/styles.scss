@@ -19,7 +19,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 10rem;
 
   // &__nav {
   //   ul {
@@ -99,5 +98,32 @@
       @extend %burger-bar;
       top: -1.1rem;
     }
+  }
+}
+
+@keyframes menu-slide {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.burger-nav {
+  position: absolute;
+  background: black;
+  padding: 3rem;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  transform: scaleX(0);
+  transform-origin: right;
+  z-index: 1;
+
+  &--open {
+    display: block;
+    animation: menu-slide 0.5s ease-in forwards;
   }
 }

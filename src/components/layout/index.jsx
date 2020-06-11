@@ -14,7 +14,7 @@ import HeaderBurger from '../header-burger';
 import Footer from '../footer';
 import './styles.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,10 +25,12 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const path = location.pathname;
+
   return (
     <Fragment>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <HeaderBurger siteTitle={data.site.siteMetadata.title} />
+      {path === '/' && <Header siteTitle={data.site.siteMetadata.title} />}
+      {path === '/homepage-2' && <HeaderBurger siteTitle={data.site.siteMetadata.title} />}
       <div>
         <main>{children}</main>
         <Footer />
