@@ -179,6 +179,7 @@
 
       &:hover {
         transform: translateX(3rem);
+        color: white;
       }
     }
   }
@@ -215,6 +216,57 @@
       margin-left: 2rem;
       height: 3rem;
       width: 3rem;
+    }
+  }
+}
+
+.burger-nav-videos {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 35vw;
+  right: 0;
+  background: black;
+  z-index: -1;
+
+  &__reveal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+    transition: width .2s cubic-bezier(.4, 0, .2, 1);
+    will-change: width;
+    transform: translateZ(0);
+    width: 100%;
+
+    &--hidden {
+      width: 0;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    opacity: 1;
+    transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
+    will-change: opacity;
+    transform: translateZ(0);
+    z-index: -1;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+
+    iframe {
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      transition: opacity .9s cubic-bezier(.4, 0, .2, 1);
+      will-change: opacity;
+      pointer-events: none;
     }
   }
 }

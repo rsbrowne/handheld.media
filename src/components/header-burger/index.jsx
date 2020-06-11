@@ -7,8 +7,10 @@ import './styles.scss';
 
 const HeaderBurger = ({ siteTitle }) => {
   const [menuOpen, setMenuOpen] = useState();
+  const [hovering, setHovering] = useState();
   let classList = 'burger';
   let menuClassList = 'burger-nav';
+  let revealClass = 'burger-nav-videos__reveal';
 
   if (menuOpen) {
     classList = 'burger burger--open';
@@ -18,13 +20,25 @@ const HeaderBurger = ({ siteTitle }) => {
     menuClassList = 'burger-nav';
   }
 
+  if (hovering) {
+    revealClass = 'burger-nav-videos__reveal burger-nav-videos__reveal--hidden';
+  } else {
+    revealClass = 'burger-nav-videos__reveal';
+  }
+
+  const height = window.innerHeight;
+  const width = (height / 9) * 16;
+
   return (
     <Fragment>
       <div className={menuClassList}>
         <div className="burger-nav__inner">
           <nav className="burger-nav__nav">
             <ul className="burger-nav__items">
-              <li className="burger-nav__item">
+              <li
+                className="burger-nav__item"
+                onMouseEnter={() => setHovering(true)}
+                onMouseOut={() => setHovering(false)}>
                 <Link to="homepage-2">Homepage 2</Link>
               </li>
               <li className="burger-nav__item">
@@ -62,6 +76,19 @@ const HeaderBurger = ({ siteTitle }) => {
                 </svg>
               </a>
             </div>
+          </div>
+        </div>
+        <div className="burger-nav-videos">
+          <div className={revealClass} />
+          <div className="burger-nav-videos__video">
+            <iframe
+              src="https://player.vimeo.com/video/257896757?api=1&autoplay=1&loop=1&background=1"
+              width="640"
+              height="360"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+              style={{ height: height + 'px', width: width + 'px' }}></iframe>
           </div>
         </div>
       </div>
